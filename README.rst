@@ -1,7 +1,7 @@
 wildfly-formula
 ===============
 
-Wildfly is a Java application server.  https://wildfly.org/about/
+Wildfly is a Java application server.  http://wildfly.org/about/
 
 Available States
 ----------------
