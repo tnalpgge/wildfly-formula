@@ -1,0 +1,63 @@
+# vim:ft=yaml
+wildfly:
+  install_type: zip
+  wildfly_home: /opt/wildfly
+  service: wildfly
+  version_file: version.txt
+  unzip_path: /opt
+  download:
+    path:
+    file:
+    checksum:
+      md5:
+      sha1:
+  mode: standalone
+  jboss_config:
+    controller: "localhost:9999"
+    endpoint: "http://localhost:9990/management"
+  environment:
+    JBOSS_HOME: /opt/wildfly
+    WILDFLY_HOME: opt/wildfly
+  admin_account:
+    username: wildflyadmin
+    password: buzzBUZZbuzz
+  wildfly_gid: 185
+  wildfly_uid: 185
+  wildfly_user: wildfly
+  wildfly_group: wildfly
+  version: 11.0.0.Final
+  download: http://download.jboss.org/wildfly/VERSION/wildfly-VERSION.zip
+  versions:
+    8.0.0.Final:
+      md5: 9df208525e7c8c03bd592a6a0f554bea
+      sha1: 94cc7b316986a2ba14ee92a8003fa6800ca5e406
+    8.1.0.Final:
+      md5: b7df11f92ee80155702a351aee4b003b
+      sha1: 54be5928e8b85b6a8052c0fa488d9e056dfc73d2
+    8.2.0.Final:
+      md5: 86a51782581b90db44958a0ee7002c14
+      sha1: a13adadde63be3f878d22a64b48e0f3c92a3f25f
+    8.2.1.Final:
+      md5: 071f6681512929e682d714155547d0a2
+      sha1: 79b485e0a2b7adb5d9381f4bdf7851e5d0f7b740
+    9.0.0.Final:
+      md5: 5212c410bbc933edcf54efbeee429783
+      sha1: 95ad9ad43e4c65c7dd7f7fefea2587b9e03d0ae3
+    9.0.1.Final:
+      md5: d8920358e99151915da08cd1cd576ab6
+      sha1: 2401de0e5f185b46951a72e61a33459872d61dd3
+    9.0.2.Final:
+      md5: ca1233cca94a9a0d376fab1f1274ca1c
+      sha1: 4e263fb30cb3a9b5849bea3a86926b2e45dec92a
+    10.0.0.Final:
+      md5: bbef420f1f3b3c463cf8c0b171d2a8c5
+      sha1: 7bd83f071c6ba8e1620f2cf92b9357a44c3fa952
+    10.1.0.Final:
+      md5: a7ff356fd3333529426e98937d8760cf
+      sha1: 5ea0a70a483a4beaf327faeaf0a391208d33d4bd
+    11.0.0.Final:
+      md5: cabc51179090c24c2644c118df7422d9
+      sha1: ba2ba501f63dc957e69eaefbd2fe10f7aa6f61ae
+    12.0.0.Final:
+      md5: 923a9e286098ce094d0216b2d4f175e3
+      sha1: 6df92da39c42efd6aa3392abadc69967b3192350

@@ -1,0 +1,36 @@
+#CentOS:
+#Debian:
+Fedora:
+  cli_path: /usr/share/wildfly/bin/jboss-cli.sh
+  wildfly_home: /usr/share/wildfly
+  service: wildfly
+  install_type: package
+  packages:
+    wildfly: latest
+  uninstall_dirs:
+    - /etc/wildfly
+    - /usr/share/wildfly
+    - /var/lib/wildfly
+    - /var/log/wildfly
+FreeBSD:
+  #service: wildfly90
+  #service: wildfly10
+  service: wildfly11
+  #wildfly_home: /usr/local/wildfly-9.0.2
+  #wildfly_home: /usr/local/wildfly10
+  wildfly_home: /usr/local/wildfly11
+  packages:
+    #wildfly90: latest
+    #wildfly10: latest
+    wildfly11: latest
+  wildfly_user: www
+  wildfly_group: www
+SUSE:
+  wildfly_home: /var/lib/wildfly
+  packages:
+    wildfly: 10.1.0
+Ubuntu:
+  wildfly_home: /opt/wildfly
+  packages:
+    wildfly: latest
+  service: wildfly
