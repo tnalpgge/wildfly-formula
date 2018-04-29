@@ -1,0 +1,10 @@
+# Emacs
+*~
+\#*\#
+
+# Vim
+*.sw*
+
+# Salt formulae
+.vagrant/
+.idea/
