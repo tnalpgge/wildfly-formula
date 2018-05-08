@@ -12,7 +12,7 @@ wildfly_installed:
 {%   elif version in (true, 'installed', 'present') %}
 {%     do plan.present.append(package) %}
 {%   else %}
-{%     do plan.versioned.append({package: version})
+{%     do plan.versioned.append({package: version}) %}
 {%   endif %}
 {% endfor %}
 

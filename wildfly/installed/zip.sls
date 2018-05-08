@@ -1,5 +1,5 @@
 {% from 'wildfly/map.jinja' import wildfly %}
-{% set extracted_dir = wildfly.unzip_path ~ '/wildfly' ~ wildfly.version }}
+{% set extracted_dir = wildfly.unzip_path ~ '/wildfly-' ~ wildfly.version %}
 
 wildfly_installed:
   test.nop
@@ -19,7 +19,7 @@ wildfly_user:
     - uid: {{ wildfly.wildfly_uid }}
     - gid: {{ wildfly.wildfly_gid }}
     - require:
-        - user: wildfly_user
+        - group: wildfly_group
     - require_in:
         - test: wildfly_installed
 
@@ -49,7 +49,7 @@ wildfly_symlink:
     - require:
         - archive: wildfly_extracted
     - require_in:
-        test: wildfly_installed
+        - test: wildfly_installed
 
 wildfly_ownership:
   file.directory:
@@ -60,9 +60,9 @@ wildfly_ownership:
         - user
         - group
     - require:
-        archive: wildfly_extracted
+        - archive: wildfly_extracted
     - require_in:
-        test: wildfly_installed
+        - test: wildfly_installed
 
 wildfly_bin_dir:
   file.directory:
@@ -77,17 +77,17 @@ wildfly_bin_dir:
 
 wildfly_log_dir:
   file.directory:
-    - name: {{ wildfly.log_dir }}/{{ wildfly.mode }}
+    - name: {{ wildfly.log_dir }}/{{ wildfly.wildfly_mode }}
     - user: {{ wildfly.wildfly_user }}
     - group: {{ wildfly.wildfly_group }}
     - makedirs: True
     - dir_mode: 755
     - require_in:
-        test: wildfly_installed
+        - test: wildfly_installed
 
 # e.g. /etc/default/wildfly.conf, /etc/sysconfig/wildfly
-wildfly_service_config:
-  file.managed:
+#wildfly_service_config:
+#  file.managed
 
-wildfly_service_script:
-  file.managed:
+#wildfly_service_script:
+#  file.managed

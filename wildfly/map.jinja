@@ -2,14 +2,16 @@
 {% import_yaml "wildfly/osmap.yaml" as osmap %}
 {% import_yaml "wildfly/osfamilymap.yaml" as osfamilymap %}
 {% set wildfly = salt['grains.filter_by'](
-    defaults.wildfly,
-    merge = salt['grains.filter_by'](
-        osfamilymap,
-        grain='os_family',
-        merge = salt['grains.filter_by'](
-            osmap,
+    defaults,
+    default='wildfly',
+    merge=salt['grains.filter_by'](
+	osfamilymap,
+	grain='os_family',
+	merge=salt['grains.filter_by'](
+	    osmap,
             grain='os',
-            merge = salt['pillar.get']('wildfly', {}),
+            merge=salt['pillar.get']('wildfly:lookup', {}),
         ),
     ),
+)
 %}

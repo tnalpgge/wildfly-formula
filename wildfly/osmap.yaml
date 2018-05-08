@@ -1,3 +1,4 @@
+default: {}
 #CentOS:
 #Debian:
 Fedora:
@@ -12,6 +13,7 @@ Fedora:
     - /usr/share/wildfly
     - /var/lib/wildfly
     - /var/log/wildfly
+  log_dir: /var/log/wildfly
 FreeBSD:
   #service: wildfly90
   #service: wildfly10
