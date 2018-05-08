@@ -1,0 +1,11 @@
+# This file is managed by Salt
+{% from "wildfly/map.jinja" import wildfly %}
+
+# The configuration you want to run
+WILDFLY_CONFIG={{ wildfly.wildfly_configuration }}
+
+# The mode you want to run
+WILDFLY_MODE={{ wildfly.wildfly_mode }}
+
+# The address to bind to
+WILDFLY_BIND={{ wildfly.wildfly_bind }}

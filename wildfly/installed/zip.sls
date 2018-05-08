@@ -85,7 +85,7 @@ wildfly_log_dir:
     - require_in:
         - test: wildfly_installed
 
-# e.g. /etc/default/wildfly.conf, /etc/sysconfig/wildfly
+# e.g. /etc/default/wildfly.conf, /etc/sysconfig/wildfly, /etc/wildfly/wildfly.conf
 #wildfly_service_config:
 #  file.managed
 

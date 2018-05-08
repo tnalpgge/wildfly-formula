@@ -5,7 +5,7 @@ Fedora:
   cli_path: /usr/share/wildfly/bin/jboss-cli.sh
   wildfly_home: /usr/share/wildfly
   service: wildfly
-  install_type: package
+  install_type: packages
   packages:
     wildfly: latest
   uninstall_dirs:
@@ -14,6 +14,7 @@ Fedora:
     - /var/lib/wildfly
     - /var/log/wildfly
   log_dir: /var/log/wildfly
+  service_config: /etc/wildfly/wildfly.conf
 FreeBSD:
   #service: wildfly90
   #service: wildfly10

@@ -12,6 +12,8 @@ wildfly:
       md5:
       sha1:
   wildfly_mode: standalone
+  wildfly_configuration: standalone.xml
+  wildfly_bind: 0.0.0.0
   jboss_config:
     controller: "localhost:9999"
     endpoint: "http://localhost:9990/management"
