@@ -1,5 +1,5 @@
 {% from 'wildfly/map.jinja' import wildfly %}
-{% set extracted_dir = wildfly.unzip_path ~ '/wildfly-' ~ wildfly.version %}
+{% set extracted_dir = wildfly.unzip_path ~ '/wildfly-' ~ wildfly.zip_version %}
 
 wildfly_installed:
   test.nop
@@ -31,8 +31,8 @@ wildfly_extracted:
     - group: {{ wildfly.wildfly_group }}
     - keep: True
     - name: {{ wildfly.unzip_path }}
-    - source: {{ wildfly.download | replace('VERSION', wildfly.version) }}
-    - source_hash: md5={{ wildfly.versions[wildfly.version].md5 }}
+    - source: {{ wildfly.download | replace('VERSION', wildfly.zip_version) }}
+    - source_hash: md5={{ wildfly.versions[wildfly.zip_version].md5 }}
     - require_in:
         - test: wildfly_installed
 
